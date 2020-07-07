@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #ControlCenter {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-spacing: 5px;
+        }
+
+        th,
+        td {
+            border: none;
+            border-bottom: 1px solid #abbaaa;
+            text-align: center;
+            border-collapse: collapse;
+            padding: 20px 15px 20px 15px;
+            background-color: #0dc70083;
+        }
+
+        input[type="button"] {
+            height: 28px;
+            width: 100px;
+            border: none;
+            border-radius: 90px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #000000cc;
+        }
+    </style>
+    <script>
+        var incriment = 1;
+        async function playPause() {
+            var PlayPause = document.getElementById("PlayPause").value;
+            // console.log(PlayPause);
+            if (PlayPause == "Play") {
+                document.getElementById("PlayPause").value = "Pause";
+            } else {
+                document.getElementById("PlayPause").value = "Play";
+            }
+            const dataToBeSent = { "command": PlayPause + incriment };
+            incriment++;
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToBeSent)
+            }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json.PlayPause);
+        }
+
+        async function muteUnmute() {
+            var MuteUnmute = document.getElementById("MuteUnmute").value;
+            // console.log(MuteUnmute);
+            if (MuteUnmute == "Mute") {
+                document.getElementById("MuteUnmute").value = "Unmute";
+            } else {
+                document.getElementById("MuteUnmute").value = "Mute";
+            }
+            const dataToBeSent = { "command": MuteUnmute + incriment };
+            incriment++;
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToBeSent)
+            }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json.MuteUnmute);
+        }
+
+        async function fastForward() {
+            var FastForward = document.getElementById("FastForward").value;
+            // console.log(PlayPause);
+            const dataToBeSent = { "command": FastForward + incriment };
+            incriment++;
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToBeSent)
+            }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json.FastForward);
+        }
+
+        async function rewind() {
+            var Rewind = document.getElementById("Rewind").value;
+            // console.log(PlayPause);
+            const dataToBeSent = { "command": Rewind + incriment };
+            incriment++;
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToBeSent)
+            }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json.Rewind);
+        }
+
+        async function volumeUp() {
+            var VolumeUp = document.getElementById("VolumeUp").value;
+            // console.log(PlayPause);
+            const dataToBeSent = { "command": VolumeUp + incriment };
+            incriment++;
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToBeSent)
+            }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json.VolumeUp);
+        }
+
+        async function volumeDown() {
+            var VolumeDown = document.getElementById("VolumeDown").value;
+            // console.log(PlayPause);
+            const dataToBeSent = { "command": VolumeDown + incriment };
+            incriment++;
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToBeSent)
+            }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json.VolumeDown);
+        }
+
+        async function fullScreen() {
+            var FullScreenExitScreen = document.getElementById("FullScreenExitScreen").value;
+            // console.log(PlayPause);
+            if (FullScreenExitScreen == "FullScreen") {
+                document.getElementById("FullScreenExitScreen").value = "ExitFullScreen";
+            } else {
+                document.getElementById("FullScreenExitScreen").value = "FullScreen";
+            }
+            const dataToBeSent = { "command": FullScreenExitScreen + incriment };
+            incriment++;
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToBeSent)
+            }
+            const response = await fetch('/api', options);
+            const json = await response.json();
+            console.log(json.FullScreenExitScreen);
+        }
+
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Video Controler</h1>
+        <div id="ControlCenter">
+            <center>
+                <table>
+                    <tr>
+                        <th>Functions</th>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Play" id="PlayPause" onclick="playPause()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Mute" id="MuteUnmute" onclick="muteUnmute()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Fastforward" id="FastForward" onclick="fastForward()"> <input
+                                type="button" value="Rewind" id="Rewind" onclick="rewind()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="VolumeUp" id="VolumeUp" onclick="volumeUp()"> <input
+                                type="button" value="VolumeDown" id="VolumeDown" onclick="volumeDown()"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="FullScreen" id="FullScreenExitScreen" onclick="fullScreen()">
+                        </td>
+                    </tr>
+
+                </table>
+            </center>
+        </div>
+    </center>
+</body>
+
+</html>
