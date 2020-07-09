@@ -33,7 +33,6 @@ print("1...")
 time.sleep(0.3)
 print("Setup's over controler is online!")
 pyautogui.hotkey('ctrl', 'win', 'alt', 'v')
-pyautogui.hotkey('ctrl', 'win', 'alt', 'p')
 while True:
     theCommand = browser.find_element_by_id("log").text
     if theCommand not in commands:
