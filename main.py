@@ -78,5 +78,7 @@ while True:
             print('exit full screen button')
             pyautogui.hotkey('ctrl', 'win', 'alt', 'v')
             pyautogui.hotkey('ctrl', 'win', 'alt', 'b')
+        else:
+            print("Some how you've messed up the HTML, or a new feature is add that I can't understand.")
     # print(commands)
     time.sleep(0.3)
