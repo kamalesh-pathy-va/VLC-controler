@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Controler</title>
     <style>
         html {
             padding: 0px;
@@ -44,6 +44,7 @@
             font-weight: bold;
             color: #ffffff;
             background-color: #000000cc;
+            transition: 75ms linear;
         }
     </style>
     <script>
@@ -53,8 +54,12 @@
             // console.log(PlayPause);
             if (PlayPause == "Play") {
                 document.getElementById("PlayPause").value = "Pause";
+                document.getElementById("PlayPause").style.color = "black";
+                document.getElementById("PlayPause").style.background = "#c4f8fff5";
             } else {
                 document.getElementById("PlayPause").value = "Play";
+                document.getElementById("PlayPause").style.color = "white";
+                document.getElementById("PlayPause").style.background = "#000000cc";
             }
             const dataToBeSent = { "command": PlayPause + incriment };
             incriment++;
@@ -67,7 +72,7 @@
             }
             const response = await fetch('/api', options);
             const json = await response.json();
-            console.log(json.PlayPause);
+            // console.log(json.PlayPause);
         }
 
         async function muteUnmute() {
@@ -75,8 +80,12 @@
             // console.log(MuteUnmute);
             if (MuteUnmute == "Mute") {
                 document.getElementById("MuteUnmute").value = "Unmute";
+                document.getElementById("MuteUnmute").style.color = "black";
+                document.getElementById("MuteUnmute").style.background = "#c4f8fff5";
             } else {
                 document.getElementById("MuteUnmute").value = "Mute";
+                document.getElementById("MuteUnmute").style.color = "white";
+                document.getElementById("MuteUnmute").style.background = "#000000cc";
             }
             const dataToBeSent = { "command": MuteUnmute + incriment };
             incriment++;
@@ -89,7 +98,7 @@
             }
             const response = await fetch('/api', options);
             const json = await response.json();
-            console.log(json.MuteUnmute);
+            // console.log(json.MuteUnmute);
         }
 
         async function fastForward() {
@@ -106,7 +115,7 @@
             }
             const response = await fetch('/api', options);
             const json = await response.json();
-            console.log(json.FastForward);
+            // console.log(json.FastForward);
         }
 
         async function rewind() {
@@ -123,7 +132,7 @@
             }
             const response = await fetch('/api', options);
             const json = await response.json();
-            console.log(json.Rewind);
+            // console.log(json.Rewind);
         }
 
         async function volumeUp() {
@@ -140,7 +149,7 @@
             }
             const response = await fetch('/api', options);
             const json = await response.json();
-            console.log(json.VolumeUp);
+            // console.log(json.VolumeUp);
         }
 
         async function volumeDown() {
@@ -157,7 +166,7 @@
             }
             const response = await fetch('/api', options);
             const json = await response.json();
-            console.log(json.VolumeDown);
+            // console.log(json.VolumeDown);
         }
 
         async function fullScreen() {
@@ -165,8 +174,12 @@
             // console.log(PlayPause);
             if (FullScreenExitScreen == "FullScreen") {
                 document.getElementById("FullScreenExitScreen").value = "ExitFullScreen";
+                document.getElementById("FullScreenExitScreen").style.color = "black";
+                document.getElementById("FullScreenExitScreen").style.background = "#c4f8fff5";
             } else {
                 document.getElementById("FullScreenExitScreen").value = "FullScreen";
+                document.getElementById("FullScreenExitScreen").style.color = "white";
+                document.getElementById("FullScreenExitScreen").style.background = "#000000cc";
             }
             const dataToBeSent = { "command": FullScreenExitScreen + incriment };
             incriment++;
@@ -179,7 +192,7 @@
             }
             const response = await fetch('/api', options);
             const json = await response.json();
-            console.log(json.FullScreenExitScreen);
+            // console.log(json.FullScreenExitScreen);
         }
 
     </script>
