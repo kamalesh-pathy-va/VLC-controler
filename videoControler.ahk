@@ -6,9 +6,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode, 2
 ^#!v::WinActivate, VLC
 ^#!p::send {SPACE}
-^#!f::send {Right Down}
-^#!r::send {Left Down}
-^#!u::send {Up Down}
-^#!d::send {Down Down}
+^#!f::send {Right Down}{Right Up}
+^#!r::send {Left Down}{Left Up}
+^#!u::send {Up Down}{Up Up}
+^#!d::send {Down Down}{Down Up}
 ^#!m::send m
 ^#!b::send f
